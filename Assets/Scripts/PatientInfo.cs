@@ -22,12 +22,12 @@ public class PatientInfo : MonoBehaviour
             "Britt" };
 
         names = new string[] {
-            "LEDDA",
-            "DISARBOIS",
-            "MONNIER",
-            "GALVIN",
-            "GOY",
-            "RAIMUNDO" };
+            "Ledda",
+            "Disarbois",
+            "Monnier",
+            "Galvin",
+            "Goy",
+            "Raimundo" };
     }
 
     public string getRandomName()

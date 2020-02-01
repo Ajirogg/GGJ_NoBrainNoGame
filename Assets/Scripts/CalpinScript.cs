@@ -16,17 +16,35 @@ public class CalpinScript : MonoBehaviour
     public GameObject Page02;
     public GameObject Page03;
     public GameObject Page04;
-
-    PatientInfo patient;
+    public bool isCalpinActive = false;
 
 
     void Start()
     {
-        patient = GetComponent<PatientInfo>();
-        //prenomNomText.text = patient.actualname + " " + patient.actualFirstname;
-        line01.text = "";
-        line02.text = "";
-        line03.text = "";
+
+    }
+
+    public void SetCalpin(string actualname, string actualFirstname, string actualLine01, string actualLine02, string actualLine03)
+    {
+        prenomNomText.text = actualname + " " + actualFirstname;
+        if (this.name == "CanvasCalpin01")
+        {
+            line01.text = "• " + actualLine01;
+            line02.text = "• " + actualLine02;
+            line03.text = "• " + actualLine03;
+        }
+        else if (this.name == "CanvasCalpin02")
+        {
+            line01.text = "• " + actualLine01;
+            line02.text = "• " + actualLine02;
+            line03.text = "";
+        }
+        else
+        {
+            line01.text = "";
+            line02.text = "";
+            line03.text = "";
+        }
         Page01.SetActive(true);
         Page02.SetActive(false);
         Page03.SetActive(false);
@@ -45,9 +63,6 @@ public class CalpinScript : MonoBehaviour
             Page02.SetActive(false);
             Page03.SetActive(false);
             Page04.SetActive(false);
-            line01.text = "";
-            line03.text = "";
-            line03.text = "";
         }
         else if (Page03.active == true)
         {
@@ -55,9 +70,6 @@ public class CalpinScript : MonoBehaviour
             Page02.SetActive(true);
             Page03.SetActive(false);
             Page04.SetActive(false);
-            line01.text = "";
-            line03.text = "";
-            line03.text = "";
         }
         else if (Page04.active == true)
         {
@@ -65,9 +77,6 @@ public class CalpinScript : MonoBehaviour
             Page02.SetActive(false);
             Page03.SetActive(true);
             Page04.SetActive(false);
-            line01.text = "";
-            line03.text = "";
-            line03.text = "";
         }
     }
 
@@ -79,9 +88,6 @@ public class CalpinScript : MonoBehaviour
             Page02.SetActive(true);
             Page03.SetActive(false);
             Page04.SetActive(false);
-            line01.text = "";
-            line03.text = "";
-            line03.text = "";
         }
         else if (Page02.active == true)
         {
@@ -89,9 +95,6 @@ public class CalpinScript : MonoBehaviour
             Page02.SetActive(false);
             Page03.SetActive(true);
             Page04.SetActive(false);
-            line01.text = "";
-            line03.text = "";
-            line03.text = "";
         }
         else if (Page03.active == true)
         {
@@ -99,9 +102,6 @@ public class CalpinScript : MonoBehaviour
             Page02.SetActive(false);
             Page03.SetActive(false);
             Page04.SetActive(true);
-            line01.text = "";
-            line03.text = "";
-            line03.text = "";
         }
         else if (Page04.active == true)
         {
@@ -111,6 +111,19 @@ public class CalpinScript : MonoBehaviour
 
     public void ShowHideCalpin()
     {
+        isCalpinActive = !isCalpinActive;
 
+        if (isCalpinActive)
+        {
+            // Do transfome here
+        }
+        else if (!isCalpinActive)
+        {
+            // Do transfome here
+            Page01.SetActive(true);
+            Page02.SetActive(false);
+            Page03.SetActive(false);
+            Page04.SetActive(false);
+        }
     }
 }
