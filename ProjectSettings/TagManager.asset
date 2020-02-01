@@ -3,7 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Psychologist
+  - Incense
+  - Rubik's Cube
+  - Picture
+  - Carpet
+  - Family Portrait
+  - Termination Letter
+  - Alcohol
+  - Cigarette
+  - Cookies
+  - Radio
+  - Wood toy
+  - Window
+  - Blue medicine
+  - Red medicine
+  - Crossed family portrait
+  - Calling card
   layers:
   - Default
   - TransparentFX
