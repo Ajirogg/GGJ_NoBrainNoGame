@@ -8,6 +8,9 @@ public class PatientInfo : MonoBehaviour
     public string[] names;
     public string[] firstnames;
 
+    public string actualname;
+    public string actualFirstname;
+
     public PatientInfo()
     {
         firstnames = new string[] { 
@@ -30,12 +33,12 @@ public class PatientInfo : MonoBehaviour
     public string getRandomName()
     {
         int index = Random.Range(0, names.Length);
-        return names[index];
+        return actualname = names[index];
     }
 
     public string getRandomFirstname()
     {
         int index = Random.Range(0, firstnames.Length);
-        return firstnames[index];
+        return actualFirstname = firstnames[index];
     }
 }
