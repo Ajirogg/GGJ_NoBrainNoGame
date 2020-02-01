@@ -18,11 +18,13 @@ public class Backend : MonoBehaviour
         {
             Debug.Log(obj.name);
             Debug.Log(obj.effect);
+            Debug.Log(obj.usage);
         }
         foreach (ObjectUsable obj in mentalDisorder.badObjects)
         {
             Debug.Log(obj.name);
             Debug.Log(obj.effect);
+            Debug.Log(obj.usage);
         }
 
     }

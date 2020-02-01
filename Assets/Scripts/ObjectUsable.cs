@@ -6,10 +6,12 @@ public class ObjectUsable : MonoBehaviour
 {
     public string name;
     public int effect;
+    public string usage;
 
-    public ObjectUsable(string name, int effect)
+    public ObjectUsable(string name, int effect, string desc)
     {
         this.name = name;
         this.effect = effect;
+        usage = desc;
     }
 }
