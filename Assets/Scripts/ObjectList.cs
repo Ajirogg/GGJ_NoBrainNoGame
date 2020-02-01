@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class ObjectList : MonoBehaviour
 {
-    ObjectUsable[] objects;
+    public ObjectUsable[] objects;
 
     public ObjectUsable[] neutralSchizo;
     public ObjectUsable[] neutralManiac;
     public ObjectUsable[] neutralAddict;
     public ObjectUsable[] neutralADD;
 
-    public ObjectList() { }
+    public ObjectList() {
+        CreateObjectList();
+    }
 
    public ObjectUsable[] CreateObjectList()
     {
@@ -51,6 +53,7 @@ public class ObjectList : MonoBehaviour
             callingCard
         };
 
+
         neutralSchizo = new ObjectUsable[] {
             incense,
             rubiksCube,
@@ -68,7 +71,6 @@ public class ObjectList : MonoBehaviour
 
         neutralADD = new ObjectUsable[] {
             incense,
-            rubiksCube,
             picture,
             carpet,
             familyPortrait,
@@ -103,7 +105,6 @@ public class ObjectList : MonoBehaviour
             cigarette,
             cookie,
             radio,
-            toy,
             window,
             medicine1,
             medicine2,

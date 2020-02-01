@@ -9,40 +9,37 @@ public class MentalDisordersList : MonoBehaviour
 
     public MentalDisordersList()
     {
-        ObjectUsable[] objs = objList.CreateObjectList();
-
-
-        ObjectUsable incense = objList.GetObjectUsable(objs, "Incense");
-        ObjectUsable rubiksCube = objList.GetObjectUsable(objs, "Rubik's Cube");
-        ObjectUsable picture = objList.GetObjectUsable(objs, "Picture");
-        ObjectUsable carpet = objList.GetObjectUsable(objs, "Carpet");
+        ObjectUsable incense = objList.GetObjectUsable(objList.objects, "Incense");
+        ObjectUsable rubiksCube = objList.GetObjectUsable(objList.objects, "Rubik's Cube");
+        ObjectUsable picture = objList.GetObjectUsable(objList.objects, "Picture");
+        ObjectUsable carpet = objList.GetObjectUsable(objList.objects, "Carpet");
         MentalDisorder maniac = new MentalDisorder("Maniac", incense, rubiksCube, picture, carpet);     
         maniac.neutralObject = objList.GetObjUsableNeutral(objList.neutralManiac);
 
 
         
-        ObjectUsable familyPortrait = objList.GetObjectUsable(objs, "Family Portrait");
-        ObjectUsable terminationLetter = objList.GetObjectUsable(objs, "Termination Letter");
-        ObjectUsable alcohol = objList.GetObjectUsable(objs, "Alcohol");
-        ObjectUsable cigarette = objList.GetObjectUsable(objs, "Cigarette");
+        ObjectUsable familyPortrait = objList.GetObjectUsable(objList.objects, "Family Portrait");
+        ObjectUsable terminationLetter = objList.GetObjectUsable(objList.objects, "Termination Letter");
+        ObjectUsable alcohol = objList.GetObjectUsable(objList.objects, "Alcohol");
+        ObjectUsable cigarette = objList.GetObjectUsable(objList.objects, "Cigarette");
         MentalDisorder drugAddiction = new MentalDisorder("Drug Addiction", familyPortrait, terminationLetter, alcohol, cigarette);
         drugAddiction.neutralObject = objList.GetObjUsableNeutral(objList.neutralAddict);
 
 
 
 
-        ObjectUsable cookie = objList.GetObjectUsable(objs, "Cookies");
-        ObjectUsable radio = objList.GetObjectUsable(objs, "Radio");
-        ObjectUsable toy = objList.GetObjectUsable(objs, "Wood toy");
-        ObjectUsable window = objList.GetObjectUsable(objs, "Window");
+        ObjectUsable cookie = objList.GetObjectUsable(objList.objects, "Cookies");
+        ObjectUsable radio = objList.GetObjectUsable(objList.objects, "Radio");
+        ObjectUsable toy = objList.GetObjectUsable(objList.objects, "Wood toy");
+        ObjectUsable window = objList.GetObjectUsable(objList.objects, "Window");
         MentalDisorder attentionDeficit = new MentalDisorder("Attention deficit disorder", cookie, radio, toy, window);
         attentionDeficit.neutralObject = objList.GetObjUsableNeutral(objList.neutralADD);
 
 
-        ObjectUsable medicine1 = objList.GetObjectUsable(objs, "Blue medicine");
-        ObjectUsable medicine2 = objList.GetObjectUsable(objs, "Red medicine");
-        ObjectUsable familyPortraitCrossed = objList.GetObjectUsable(objs, "Crossed family portrait");
-        ObjectUsable callingCard = objList.GetObjectUsable(objs, "Calling card");
+        ObjectUsable medicine1 = objList.GetObjectUsable(objList.objects, "Blue medicine");
+        ObjectUsable medicine2 = objList.GetObjectUsable(objList.objects, "Red medicine");
+        ObjectUsable familyPortraitCrossed = objList.GetObjectUsable(objList.objects, "Crossed family portrait");
+        ObjectUsable callingCard = objList.GetObjectUsable(objList.objects, "Calling card");
         MentalDisorder schizophrenia = new MentalDisorder("Schizophrenia", medicine1, callingCard, familyPortraitCrossed, medicine2);
         drugAddiction.neutralObject = objList.GetObjUsableNeutral(objList.neutralSchizo);
 
