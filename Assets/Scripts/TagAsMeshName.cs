@@ -5,16 +5,17 @@ using UnityEngine;
 public class TagAsMeshName : MonoBehaviour
 {
 
-    public ObjectList objList = new ObjectList();
+    ObjectList objList = new ObjectList();
     SpriteRenderer Actual;
-    GameObject actualGo;
+    public GameObject actualGo;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(objList.objects);
-        actualGo = actualGo.GetComponent<GameObject>();
-        Actual = Actual.GetComponent<SpriteRenderer>();
+//        actualGo = this.GetComponent<GameObject>();
+  //      Debug.Log(actualGo.name);
+
+        Actual = actualGo.GetComponent<SpriteRenderer>();
         foreach(ObjectUsable obj in objList.objects){
             Debug.Log(obj.name);
             if(Actual.sprite.name == obj.name){

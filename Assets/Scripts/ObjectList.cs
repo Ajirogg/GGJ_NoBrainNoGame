@@ -11,12 +11,10 @@ public class ObjectList : MonoBehaviour
     public ObjectUsable[] neutralAddict;
     public ObjectUsable[] neutralADD;
 
-    public ObjectList() { }
-
-
-    private void Awake() {
-      CreateObjectList();  
+    public ObjectList() {
+        CreateObjectList();
     }
+
    public ObjectUsable[] CreateObjectList()
     {
         ObjectUsable incense = new ObjectUsable("Incense", 0, "Light incense");
@@ -55,9 +53,6 @@ public class ObjectList : MonoBehaviour
             callingCard
         };
 
-        foreach(ObjectUsable obj in objects){
-            Debug.Log(obj.name);
-        }
 
         neutralSchizo = new ObjectUsable[] {
             incense,
