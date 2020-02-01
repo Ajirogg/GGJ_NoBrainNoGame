@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class Backend : MonoBehaviour
 {
+    Patient patient; 
+
     // Start is called before the first frame update
     void Start()
     {
-        Patient patient = new Patient();
-        Debug.Log(patient.name);
-        Debug.Log(patient.firstname);
+        patient = new Patient();
 
         MentalDisordersList mentalDisorders = new MentalDisordersList();
         patient.mentalDisorder = mentalDisorders.GetMentalDisorder();
-        Debug.Log(patient.mentalDisorder.name);
 
         if(patient.mentalDisorder.name == "Schizophrenia")
         {
@@ -43,10 +42,17 @@ public class Backend : MonoBehaviour
                obj.setEffet(-50);
             }
         }
+
+        SetupGame();
     }
 
     // Update is called once per frame
     void Update()
+    {
+
+    }
+
+    void SetupGame()
     {
 
     }
