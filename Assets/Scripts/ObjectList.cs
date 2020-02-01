@@ -76,7 +76,6 @@ public class ObjectList : MonoBehaviour
 
         neutralADD = new ObjectUsable[] {
             incense,
-            rubiksCube,
             picture,
             carpet,
             familyPortrait,
@@ -111,7 +110,6 @@ public class ObjectList : MonoBehaviour
             cigarette,
             cookie,
             radio,
-            toy,
             window,
             medicine1,
             medicine2,
