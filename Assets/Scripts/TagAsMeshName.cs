@@ -5,19 +5,20 @@ using UnityEngine;
 public class TagAsMeshName : MonoBehaviour
 {
 
-    ObjectList objectList;
+    public ObjectList objList = new ObjectList();
     SpriteRenderer Actual;
     GameObject actualGo;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        actualGo = GetComponent<GameObject>();
-        Actual = GetComponent<SpriteRenderer>();
-        foreach(ObjectUsable obj in objectList.objects){
-            if(Actual.material.name == obj.name){
-                actualGo.tag = obj.name;
+        Debug.Log(objList.objects);
+        actualGo = actualGo.GetComponent<GameObject>();
+        Actual = Actual.GetComponent<SpriteRenderer>();
+        foreach(ObjectUsable obj in objList.objects){
+            Debug.Log(obj.name);
+            if(Actual.sprite.name == obj.name){
+                actualGo.gameObject.tag = obj.name;
             };
         }
         
