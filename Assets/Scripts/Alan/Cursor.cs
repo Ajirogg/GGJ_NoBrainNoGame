@@ -7,24 +7,19 @@ public class Cursor : MonoBehaviour
     private float clickCooldown = 0.5f;
     private float clickNext = 0.5f;
 
-    private Ray hit;
+    private Ray ray;
     private RaycastHit hitInfo;
     private Vector2 mousePosition2D;
 
 
     private void Update()
     {
-        hit = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(Camera.main.transform.position, Input.mousePosition, Color.green);
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Input.GetButtonDown("Fire1") && Time.time > clickNext)
-        {
-            clickNext = Time.time + clickCooldown;
-            if (Physics.Raycast(hit, out hitInfo))
+            if (Physics.Raycast(ray, out hitInfo))
             {
-                Debug.Log("Hit");
+                Debug.Log(hitInfo);
             }
-        }
     }
 
     public void Test()
