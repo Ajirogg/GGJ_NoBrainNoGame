@@ -7,6 +7,7 @@ public class MentalDisorder : MonoBehaviour
     public new string name;
     public ObjectUsable[] goodObjects;
     public ObjectUsable[] badObjects;
+    public ObjectUsable neutralObject;
 
 
     public MentalDisorder(string name, ObjectUsable goodObj1, ObjectUsable goodObj2, ObjectUsable badObj1, ObjectUsable badObj2)

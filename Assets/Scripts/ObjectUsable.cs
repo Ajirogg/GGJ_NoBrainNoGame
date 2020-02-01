@@ -14,4 +14,9 @@ public class ObjectUsable : MonoBehaviour
         this.effect = effect;
         usage = desc;
     }
+
+    public void setEffet(int effect)
+    {
+        this.effect = effect;
+    }
 }

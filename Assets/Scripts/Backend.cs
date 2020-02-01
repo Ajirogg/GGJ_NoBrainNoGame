@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Backend : MonoBehaviour
-{    
+{
     // Start is called before the first frame update
     void Start()
     {
@@ -14,24 +14,40 @@ public class Backend : MonoBehaviour
         MentalDisordersList mentalDisorders = new MentalDisordersList();
         MentalDisorder mentalDisorder = mentalDisorders.GetMentalDisorder();
         Debug.Log(mentalDisorder.name);
-        foreach(ObjectUsable obj in mentalDisorder.goodObjects)
-        {
-            Debug.Log(obj.name);
-            Debug.Log(obj.effect);
-            Debug.Log(obj.usage);
-        }
-        foreach (ObjectUsable obj in mentalDisorder.badObjects)
-        {
-            Debug.Log(obj.name);
-            Debug.Log(obj.effect);
-            Debug.Log(obj.usage);
-        }
 
+        if(mentalDisorder.name == "Schizophrenia")
+        {
+            foreach (ObjectUsable obj in mentalDisorder.goodObjects)
+            {
+                obj.setEffet(50);
+            }
+            foreach (ObjectUsable obj in mentalDisorder.badObjects)
+            {
+                if (obj.name == "Red medicine")
+                {
+                    obj.setEffet(50);
+                }
+                else
+                {
+                    obj.setEffet(-50);
+                }
+            }
+        } else
+        {
+            foreach (ObjectUsable obj in mentalDisorder.goodObjects)
+            {
+                obj.setEffet(50);
+            }
+            foreach (ObjectUsable obj in mentalDisorder.badObjects)
+            {
+               obj.setEffet(-50);
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
