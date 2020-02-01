@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectList : MonoBehaviour
 {
-    ObjectUsable[] objects;
+    public ObjectUsable[] objects;
 
     public ObjectUsable[] neutralSchizo;
     public ObjectUsable[] neutralManiac;
