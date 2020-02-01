@@ -12,16 +12,16 @@ public class Backend : MonoBehaviour
         Debug.Log(patient.firstname);
 
         MentalDisordersList mentalDisorders = new MentalDisordersList();
-        MentalDisorder mentalDisorder = mentalDisorders.GetMentalDisorder();
-        Debug.Log(mentalDisorder.name);
+        patient.mentalDisorder = mentalDisorders.GetMentalDisorder();
+        Debug.Log(patient.mentalDisorder.name);
 
-        if(mentalDisorder.name == "Schizophrenia")
+        if(patient.mentalDisorder.name == "Schizophrenia")
         {
-            foreach (ObjectUsable obj in mentalDisorder.goodObjects)
+            foreach (ObjectUsable obj in patient.mentalDisorder.goodObjects)
             {
                 obj.setEffet(50);
             }
-            foreach (ObjectUsable obj in mentalDisorder.badObjects)
+            foreach (ObjectUsable obj in patient.mentalDisorder.badObjects)
             {
                 if (obj.name == "Red medicine")
                 {
@@ -34,11 +34,11 @@ public class Backend : MonoBehaviour
             }
         } else
         {
-            foreach (ObjectUsable obj in mentalDisorder.goodObjects)
+            foreach (ObjectUsable obj in patient.mentalDisorder.goodObjects)
             {
                 obj.setEffet(50);
             }
-            foreach (ObjectUsable obj in mentalDisorder.badObjects)
+            foreach (ObjectUsable obj in patient.mentalDisorder.badObjects)
             {
                obj.setEffet(-50);
             }
