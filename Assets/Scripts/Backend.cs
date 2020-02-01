@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class Backend : MonoBehaviour
 {
+    Patient patient;
+
+    public GameObject obj1;
+    public GameObject obj2;
+    public GameObject obj3;
+    public GameObject obj4;
+    public GameObject obj5;
+
     // Start is called before the first frame update
     void Start()
     {
-        Patient patient = new Patient();
-        Debug.Log(patient.name);
-        Debug.Log(patient.firstname);
+        patient = new Patient();
 
         MentalDisordersList mentalDisorders = new MentalDisordersList();
-        MentalDisorder mentalDisorder = mentalDisorders.GetMentalDisorder();
-        Debug.Log(mentalDisorder.name);
+        patient.mentalDisorder = mentalDisorders.GetMentalDisorder();
 
-        if(mentalDisorder.name == "Schizophrenia")
+        if(patient.mentalDisorder.name == "Schizophrenia")
         {
-            foreach (ObjectUsable obj in mentalDisorder.goodObjects)
+            foreach (ObjectUsable obj in patient.mentalDisorder.goodObjects)
             {
                 obj.setEffet(50);
             }
-            foreach (ObjectUsable obj in mentalDisorder.badObjects)
+            foreach (ObjectUsable obj in patient.mentalDisorder.badObjects)
             {
                 if (obj.name == "Red medicine")
                 {
@@ -34,19 +39,26 @@ public class Backend : MonoBehaviour
             }
         } else
         {
-            foreach (ObjectUsable obj in mentalDisorder.goodObjects)
+            foreach (ObjectUsable obj in patient.mentalDisorder.goodObjects)
             {
                 obj.setEffet(50);
             }
-            foreach (ObjectUsable obj in mentalDisorder.badObjects)
+            foreach (ObjectUsable obj in patient.mentalDisorder.badObjects)
             {
                obj.setEffet(-50);
             }
         }
+
+        SetupGame();
     }
 
     // Update is called once per frame
     void Update()
+    {
+
+    }
+
+    void SetupGame()
     {
 
     }

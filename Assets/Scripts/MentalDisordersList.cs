@@ -46,7 +46,7 @@ public class MentalDisordersList : MonoBehaviour
         MentalDisorder schizophrenia = new MentalDisorder("Schizophrenia", medicine1, callingCard, familyPortraitCrossed, medicine2);
         drugAddiction.neutralObject = objList.GetObjUsableNeutral(objList.neutralSchizo);
 
-        mentalDisroders = new MentalDisorder[] { maniac, drugAddiction, attentionDeficit, schizophrenia };
+        mentalDisroders = new MentalDisorder[] { maniac, drugAddiction, attentionDeficit/*, schizophrenia */};
     }
 
     public MentalDisorder GetMentalDisorder()
