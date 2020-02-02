@@ -12,6 +12,8 @@ public class Cursor : MonoBehaviour
     
     private Vector2 mousePosition2D;
 
+    public Backend back;
+
 
     private void Update()
     {
@@ -19,9 +21,9 @@ public class Cursor : MonoBehaviour
 
             if (Physics.Raycast(ray, out hitInfo))
             {
-                Debug.Log(hitInfo.transform.tag);
                 if(Input.GetMouseButton(0)){
                     SetSateTrue(hitInfo.transform.tag);
+                    
                 }
 
             }
@@ -29,13 +31,14 @@ public class Cursor : MonoBehaviour
 
     public void SetSateTrue(string tag)
     {
-        ObjectList objs = GetComponent<ObjectList>() ;
-
-        foreach(ObjectUsable obj in objs.objects)
+        ObjectUsable[] objs = back.patient.ObjectLister.objects;
+        foreach(ObjectUsable obj in objs)
         {
             if(obj.name == tag){
                 if(obj.state == false){
                 obj.state = true;
+                ApplyObjEffect(obj.name);
+                //Debug.Log(obj.state);
                 }else{
 
                 }
@@ -45,23 +48,24 @@ public class Cursor : MonoBehaviour
 
     public void ApplyObjEffect(string tag)
     {
-        ObjectList objs = GetComponent<ObjectList>() ;
-        Patient actualPatient = GetComponent<Patient>();
-        foreach(ObjectUsable obj in objs.objects)
+        Patient actualPatient = back.patient;
+        ObjectUsable[] badobjs = back.patient.mentalDisorder.badObjects;
+        ObjectUsable[] goodobjs = back.patient.mentalDisorder.goodObjects;
+
+        foreach(ObjectUsable obj in badobjs)
         {
             if(obj.name == tag){
-                foreach(ObjectUsable pObj in actualPatient.UsableObjGood){
-                    if(pObj.name == tag){
-                        actualPatient.ClientMindHealthPlus += pObj.effect;
-                    }
+                        actualPatient.ClientMindHealthPlus += obj.effect;
+                    
                 }
-                foreach(ObjectUsable mObj in actualPatient.UsableObjBad){
-                    if(mObj.name == tag){
-                        actualPatient.ClientMindHealthMin += mObj.effect;
-                    }
-                }
+        }
+        foreach(ObjectUsable mObj in goodobjs){
+            if(mObj.name == tag){
+                actualPatient.ClientMindHealthMin += mObj.effect;
             }
-        } 
+        }
     }
+        
+    
 }
 

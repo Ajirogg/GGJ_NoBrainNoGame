@@ -17,7 +17,6 @@ public class TagAsMeshName : MonoBehaviour
 
         Actual = actualGo.GetComponent<SpriteRenderer>();
         foreach(ObjectUsable obj in objList.objects){
-            Debug.Log(obj.name);
             if(Actual.sprite.name == obj.name){
                 actualGo.gameObject.tag = obj.name;
             };

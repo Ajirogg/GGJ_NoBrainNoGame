@@ -13,6 +13,8 @@ public class Patient : MonoBehaviour
     public ObjectUsable[] UsableObjGood;
     public ObjectUsable[] UsableObjBad;
 
+    public ObjectList ObjectLister = new ObjectList();
+
     public int ClientMindHealthMin;
     public int ClientMindHealthPlus;
     
@@ -20,12 +22,15 @@ public class Patient : MonoBehaviour
 
     public Patient()
     {
+    
         PatientInfo pInfo = new PatientInfo();
         name = pInfo.getRandomName();
         firstname = pInfo.getRandomFirstname();
 
         ClientMindHealthMin =  0;
         ClientMindHealthPlus = 0;
+
+
 
         
     }

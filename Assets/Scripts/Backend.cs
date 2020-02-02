@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Backend : MonoBehaviour
 {
-    Patient patient;
+    public Patient patient;
     CalpinScript calpinScript;
 
     public GameObject obj1;
@@ -22,11 +22,10 @@ public class Backend : MonoBehaviour
     void Start()
     {
         patient = new Patient();
-        Debug.Log("SAINTE MERE TA PUTE ENCULE DE TES MORTS");
-        Debug.Log(patient.name + " " + patient.firstname);
 
         MentalDisordersList mentalDisorders = new MentalDisordersList();
         patient.mentalDisorder = mentalDisorders.GetMentalDisorder();
+        Debug.Log(patient.mentalDisorder.name);
 
         if (patient.mentalDisorder.name == "Schizophrenia")
         {
@@ -84,6 +83,9 @@ public class Backend : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(patient.ClientMindHealthMin);
+        Debug.Log(patient.ClientMindHealthPlus);
+
         if (patient.ClientMindHealthMin == -100){
             NewPatient();
         }
