@@ -88,11 +88,13 @@ public class Backend : MonoBehaviour
 
         if (patient.ClientMindHealthMin == -100){
             NewPatient();
+            Debug.Log(patient.name + " " + patient.firstname + " " + patient.mentalDisorder.name);
         }
-        if(patient.ClientMindHealthPlus == 100){
+        if (patient.ClientMindHealthPlus == 100){
             NewPatient();
+            Debug.Log(patient.name + " " + patient.firstname + " " + patient.mentalDisorder.name);
         }
-        
+
 
 
     }

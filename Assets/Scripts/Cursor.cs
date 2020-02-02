@@ -55,13 +55,13 @@ public class Cursor : MonoBehaviour
         foreach(ObjectUsable obj in badobjs)
         {
             if(obj.name == tag){
-                        actualPatient.ClientMindHealthPlus += obj.effect;
+                        actualPatient.ClientMindHealthMin += obj.effect;
                     
                 }
         }
         foreach(ObjectUsable mObj in goodobjs){
             if(mObj.name == tag){
-                actualPatient.ClientMindHealthMin += mObj.effect;
+                actualPatient.ClientMindHealthPlus += mObj.effect;
             }
         }
     }
