@@ -5,9 +5,9 @@ using UnityEngine;
 public class MentalDisordersList : MonoBehaviour
 {
     public MentalDisorder[] mentalDisroders;
-    public ObjectList objList = new ObjectList();
+  //  public ObjectList objList = new ObjectList();
 
-    public MentalDisordersList()
+    public MentalDisordersList(ObjectList objList)
     {
         ObjectUsable incense = objList.GetObjectUsable(objList.objects, "Incense");
         ObjectUsable rubiksCube = objList.GetObjectUsable(objList.objects, "Rubik's Cube");

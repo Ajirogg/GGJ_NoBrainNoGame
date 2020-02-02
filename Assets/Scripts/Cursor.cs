@@ -38,7 +38,6 @@ public class Cursor : MonoBehaviour
                 if(obj.state == false){
                 obj.state = true;
                 ApplyObjEffect(obj.name);
-                //Debug.Log(obj.state);
                 }else{
 
                 }

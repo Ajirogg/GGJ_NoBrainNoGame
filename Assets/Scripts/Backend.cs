@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Backend : MonoBehaviour
 {
+    public ObjectList objectLister;
     public Patient patient;
+
+
     CalpinScript calpinScript;
 
     public GameObject obj1;
@@ -22,8 +25,9 @@ public class Backend : MonoBehaviour
     void Start()
     {
         patient = new Patient();
-
-        MentalDisordersList mentalDisorders = new MentalDisordersList();
+        objectLister = new ObjectList();
+     
+        MentalDisordersList mentalDisorders = new MentalDisordersList(objectLister);
         patient.mentalDisorder = mentalDisorders.GetMentalDisorder();
         Debug.Log(patient.mentalDisorder.name);
 
@@ -103,7 +107,9 @@ public class Backend : MonoBehaviour
 
         patient = new Patient();
 
-        MentalDisordersList mentalDisorders = new MentalDisordersList();
+        Debug.Log(objectLister.objects.Length);
+
+        MentalDisordersList mentalDisorders = new MentalDisordersList(objectLister);
         patient.mentalDisorder = mentalDisorders.GetMentalDisorder();
 
         if (patient.mentalDisorder.name == "Schizophrenia")
