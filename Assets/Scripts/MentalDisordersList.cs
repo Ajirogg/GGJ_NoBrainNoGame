@@ -41,9 +41,9 @@ public class MentalDisordersList : MonoBehaviour
         ObjectUsable familyPortraitCrossed = objList.GetObjectUsable(objList.objects, "Crossed family portrait");
         ObjectUsable callingCard = objList.GetObjectUsable(objList.objects, "Calling card");
         MentalDisorder schizophrenia = new MentalDisorder("Schizophrenia", medicine1, callingCard, familyPortraitCrossed, medicine2);
-        drugAddiction.neutralObject = objList.GetObjUsableNeutral(objList.neutralSchizo);
+        schizophrenia.neutralObject = objList.GetObjUsableNeutral(objList.neutralSchizo);
 
-        mentalDisroders = new MentalDisorder[] { maniac, drugAddiction, attentionDeficit/*, schizophrenia */};
+        mentalDisroders = new MentalDisorder[] { maniac, drugAddiction, attentionDeficit, schizophrenia };
     }
 
     public MentalDisorder GetMentalDisorder()

@@ -31,6 +31,7 @@ public class Backend : MonoBehaviour
         patient.mentalDisorder = mentalDisorders.GetMentalDisorder();
         Debug.Log(patient.mentalDisorder.name);
 
+
         if (patient.mentalDisorder.name == "Schizophrenia")
         {
             foreach (ObjectUsable obj in patient.mentalDisorder.goodObjects)
@@ -70,14 +71,14 @@ public class Backend : MonoBehaviour
             objectList[r] = tmp;
         }
 
-        string object01 = objectList[0].usage;
+     /*     string object01 = objectList[0].usage;
         string object02 = objectList[1].usage;
         string object03 = objectList[2].usage;
         string object04 = objectList[3].usage;
         string object05 = objectList[4].usage;
         string objectEmpty = "";
 
-     /*   calpinScript01.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object01, object02, object03);
+      calpinScript01.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object01, object02, object03);
         calpinScript02.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object04, object05, objectEmpty);
         calpinScript03.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, objectEmpty, objectEmpty, objectEmpty);
         calpinScript04.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, objectEmpty, objectEmpty, objectEmpty);
@@ -87,8 +88,8 @@ public class Backend : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(patient.ClientMindHealthMin);
-        Debug.Log(patient.ClientMindHealthPlus);
+        Debug.Log("Mauvais = " + patient.ClientMindHealthMin);
+        Debug.Log("Bon = " + patient.ClientMindHealthPlus);
 
         if (patient.ClientMindHealthMin == -100){
             NewPatient();
@@ -104,10 +105,8 @@ public class Backend : MonoBehaviour
     }
 
     void NewPatient(){
-
+        patient = null;
         patient = new Patient();
-
-        Debug.Log(objectLister.objects.Length);
 
         MentalDisordersList mentalDisorders = new MentalDisordersList(objectLister);
         patient.mentalDisorder = mentalDisorders.GetMentalDisorder();
