@@ -111,7 +111,7 @@ public class Backend : MonoBehaviour
 
     }
 
-    void NewPatient(){
+    public void NewPatient(){
         patient = null;
         patient = new Patient();
 
