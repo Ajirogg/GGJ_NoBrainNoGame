@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveCalpin : MonoBehaviour
 {
+    public Cursor cursor = null;
     // Transforms to act as start and end markers for the journey.
     public Transform startMarker;
     public Transform endMarker;
@@ -81,6 +82,7 @@ public class MoveCalpin : MonoBehaviour
 
                 // Calculate the journey length.
                 journeyLength = Vector3.Distance(startMarker.position, endMarker.position);
+                cursor.isCalpinOpen = false;
             }
         }
     }

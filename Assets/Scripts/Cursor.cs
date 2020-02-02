@@ -8,6 +8,8 @@ public class Cursor : MonoBehaviour
     [SerializeField] GameObject calpin03 = null;
     [SerializeField] GameObject calpin04 = null;
 
+    public bool isCalpinOpen = false;
+
     private Ray ray;
     private RaycastHit hitInfo;
 
@@ -18,17 +20,20 @@ public class Cursor : MonoBehaviour
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hitInfo))
+        if (!isCalpinOpen)
         {
-            if (Input.GetMouseButton(0))
+            if (Physics.Raycast(ray, out hitInfo))
             {
-                SetSateTrue(hitInfo.transform.tag);
-                if (hitInfo.transform.tag == "Psychologist")
+                if (Input.GetMouseButton(0))
                 {
-                    calpinMove.GetComponent<MoveCalpin>().ShowHideCalpin();
+                    SetSateTrue(hitInfo.transform.tag);
+                    if (hitInfo.transform.tag == "Psychologist")
+                    {
+                        calpinMove.GetComponent<MoveCalpin>().ShowHideCalpin();
+                        isCalpinOpen = true;
+                    }
                 }
             }
-
         }
     }
     public void SetSateTrue(string tag)
@@ -41,13 +46,8 @@ public class Cursor : MonoBehaviour
                 if (obj.state == false)
                 {
                     obj.state = true;
-<<<<<<< HEAD
                     ApplyObjEffect(obj.name, objs);
                     back.changeState(obj.name);
-=======
-                    ApplyObjEffect(obj.name);
-                    //Debug.Log(obj.state);
->>>>>>> ALan
                 }
                 else
                 {
@@ -61,32 +61,42 @@ public class Cursor : MonoBehaviour
     public void ApplyObjEffect(string tag, ObjectUsable[] objs)
     {
         Patient actualPatient = back.patient;
-
-<<<<<<< HEAD
-        if(back.patient.mentalDisorder.name == "Schizophrenia")
+        if (back.patient.mentalDisorder.name == "Schizophrenia")
         {
             foreach (ObjectUsable obj in back.patient.mentalDisorder.badObjects)
             {
                 if (obj.name == tag)
-                { 
-                    if(obj.name == "Red medicine")
+                {
+                    if (obj.name == "Red medicine")
                     {
                         if (actualPatient.ClientMindHealthPlus == 50)
                         {
                             if (back.objectLister.GetObjectUsable(objs, "Blue medicine").state == true)
                             {
                                 actualPatient.ClientMindHealthMin -= obj.effect;
-                            } else
+                                calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
+                                calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
+
+                            }
+                            else
                             {
                                 actualPatient.ClientMindHealthPlus += obj.effect;
+                                calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+                                calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
                             }
-                        } else
+                        }
+                        else
                         {
                             actualPatient.ClientMindHealthPlus += obj.effect;
+                            calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+                            calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
                         }
-                    } else
+                    }
+                    else
                     {
                         actualPatient.ClientMindHealthMin += obj.effect;
+                        calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
+                        calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
                     }
                 }
             }
@@ -96,7 +106,7 @@ public class Cursor : MonoBehaviour
                 if (mObj.name == tag)
                 {
                     Debug.Log("UUUUUUUUUUUUUUUUUUUUUU");
-                    Debug.Log(mObj.name); 
+                    Debug.Log(mObj.name);
                     if (mObj.name == "Blue medicine")
                     {
                         if (actualPatient.ClientMindHealthPlus == 50)
@@ -104,54 +114,51 @@ public class Cursor : MonoBehaviour
                             if (back.objectLister.GetObjectUsable(objs, "Red medicine").state == true)
                             {
                                 actualPatient.ClientMindHealthMin -= mObj.effect;
+                                calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
+                                calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
                             }
                             else
                             {
                                 actualPatient.ClientMindHealthPlus += mObj.effect;
+                                calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+                                calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
                             }
                         }
                         else
                         {
                             actualPatient.ClientMindHealthPlus += mObj.effect;
+                            calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+                            calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
                         }
                     }
                     else
                     {
                         actualPatient.ClientMindHealthPlus += mObj.effect;
+                        calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+                        calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
                     }
                 }
             }
-        } else
-        {
-            foreach(ObjectUsable obj in back.patient.mentalDisorder.badObjects)
-            {
-                if(obj.name == tag){
-                    actualPatient.ClientMindHealthMin += obj.effect;
-                }
-            }
-            foreach(ObjectUsable mObj in back.patient.mentalDisorder.goodObjects)
-            {
-                if(mObj.name == tag){
-                    actualPatient.ClientMindHealthPlus += mObj.effect;
-                }
-=======
-        foreach (ObjectUsable obj in badobjs)
-        {
-            if (obj.name == tag)
-            {
-                actualPatient.ClientMindHealthMin += obj.effect;
-                calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
-                calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
-            }
         }
-        foreach (ObjectUsable mObj in goodobjs)
+        else
         {
-            if (mObj.name == tag)
+            foreach (ObjectUsable obj in back.patient.mentalDisorder.badObjects)
             {
-                actualPatient.ClientMindHealthPlus += mObj.effect;
-                calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
-                calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
->>>>>>> ALan
+                if (obj.name == tag)
+                {
+                    actualPatient.ClientMindHealthMin += obj.effect;
+                    calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
+                    calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
+                }
+            }
+            foreach (ObjectUsable mObj in back.patient.mentalDisorder.goodObjects)
+            {
+                if (mObj.name == tag)
+                {
+                    actualPatient.ClientMindHealthPlus += mObj.effect;
+                    calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+                    calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+                }
             }
         }
         if (back.patient.mentalDisorder.neutralObject.name == tag)
