@@ -39,6 +39,7 @@ public class Cursor : MonoBehaviour
                 {
                     obj.state = true;
                     ApplyObjEffect(obj.name, objs);
+                    back.changeState(obj.name);
                 }
                 else
                 {
@@ -85,6 +86,8 @@ public class Cursor : MonoBehaviour
             {
                 if (mObj.name == tag)
                 {
+                    Debug.Log("UUUUUUUUUUUUUUUUUUUUUU");
+                    Debug.Log(mObj.name); 
                     if (mObj.name == "Blue medicine")
                     {
                         if (actualPatient.ClientMindHealthPlus == 50)

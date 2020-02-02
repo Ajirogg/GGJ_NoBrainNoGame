@@ -105,8 +105,7 @@ public class ObjectList : MonoBehaviour
             window,
             medicine1,
             medicine2,
-            familyPortraitCrossed,
-            callingCard
+            familyPortraitCrossed
         };
     }
     

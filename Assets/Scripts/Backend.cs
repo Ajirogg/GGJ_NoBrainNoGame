@@ -128,16 +128,16 @@ public class Backend : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Mauvais = " + patient.ClientMindHealthMin);
-        Debug.Log("Bon = " + patient.ClientMindHealthPlus);
+
+        Debug.Log("Plus : " + patient.ClientMindHealthPlus);
+        Debug.Log("Min : " + patient.ClientMindHealthMin);
+
 
         if (patient.ClientMindHealthMin == -100){
             NewPatient();
-            Debug.Log(patient.name + " " + patient.firstname + " " + patient.mentalDisorder.name);
         }
         if (patient.ClientMindHealthPlus == 100){
             NewPatient();
-            Debug.Log(patient.name + " " + patient.firstname + " " + patient.mentalDisorder.name);
         }
 
 
@@ -229,10 +229,65 @@ public class Backend : MonoBehaviour
                 CarpetPlate.SetActive(false);
                 Picture.SetActive(true);
                 TableauDroit.SetActive(false);
+                Cube.SetActive(true);
                 break;
             case null:
                 break;
         }
     }
 
+    public void changeState(string name)
+    {
+        switch (name)
+        {
+            case "Incense":
+                Debug.Log("START ANIMATION encens");
+                break;
+            case "Rubik's Cube":
+                Debug.Log("START ANIMATION rubiks resolve");
+                break;
+            case "Picture":
+                Picture.SetActive(false);
+                TableauDroit.SetActive(true);
+                break;
+            case "Carpet":
+                Carpet.SetActive(false);
+                CarpetPlate.SetActive(true);
+                break;
+            case "Family Portrait":
+                break;
+            case "Termination Letter":
+                break;
+            case "Alcohol":
+                Debug.Log("Change sprite Bottle empty");
+                break;
+            case "Cigarette":
+                break;
+            case "Cookies":
+                break;
+            case "Radio":
+                Debug.Log("Activate/desactivate music");
+
+                break;
+            case "Wood toy":
+                break;
+            case "Window":
+                Window.SetActive(false);
+                OpenedWindow.SetActive(true);
+                break;
+            case "Blue medicine":
+                BlueMedicine.SetActive(false);
+                break;
+            case "Red medicine":
+                RedMedicine.SetActive(false);
+                break;
+            case "Crossed family portrait":
+                break;
+            case "Calling card":
+                CallingCard.SetActive(false);
+                break;
+            case null:
+                break;
+        }
+    }
 }

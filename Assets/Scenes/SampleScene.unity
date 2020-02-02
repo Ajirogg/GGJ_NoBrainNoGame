@@ -296,8 +296,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5069089, y: 0.2325, z: 0.2}
-  m_Center: {x: 0.031545587, y: 0, z: 0}
+  m_Size: {x: 0.5069089, y: 0.2325, z: 0.43269882}
+  m_Center: {x: 0.03154558, y: 0, z: -0.116349414}
 --- !u!114 &154675997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,8 +405,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.17712057, y: 0.24, z: 0.2}
-  m_Center: {x: -0.041439712, y: 0, z: 0}
+  m_Size: {x: 0.17712057, y: 0.24, z: 0.503585}
+  m_Center: {x: -0.041439712, y: 0, z: -0.15179247}
 --- !u!114 &188840310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,8 +704,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.36226758, y: 0.24, z: 0.2}
-  m_Center: {x: -0.0035813302, y: 0, z: 0}
+  m_Size: {x: 0.36226758, y: 0.24, z: 0.52102816}
+  m_Center: {x: -0.0035813302, y: 0, z: -0.16051406}
 --- !u!114 &293804209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,8 +1059,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.29, y: 0.16, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.29, y: 0.16, z: 0.62080395}
+  m_Center: {x: 0, y: 0, z: -0.21040195}
 --- !u!114 &539494085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1765,8 +1765,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.20890692, y: 0.21515965, z: 0.2}
-  m_Center: {x: -0.025546536, y: 0.0041208267, z: 0}
+  m_Size: {x: 0.20890692, y: 0.21515965, z: 0.42488015}
+  m_Center: {x: -0.025546536, y: 0.0041208267, z: -0.11244005}
 --- !u!114 &1004554750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2063,8 +2063,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.28922725, y: 0.34496725, z: 0.2}
-  m_Center: {x: 0.0033777952, y: -0.037516356, z: 0}
+  m_Size: {x: 0.28922725, y: 0.34496725, z: 0.894271}
+  m_Center: {x: 0.0033777952, y: -0.037516356, z: -0.34713548}
 --- !u!1 &1204302350
 GameObject:
   m_ObjectHideFlags: 0
@@ -2881,8 +2881,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.16491783, y: 0.13262391, z: 0.2}
-  m_Center: {x: 0.6591645, y: -0.4189484, z: 0}
+  m_Size: {x: 0.16491783, y: 0.13262391, z: 0.5499364}
+  m_Center: {x: 0.6591645, y: -0.4189484, z: -0.1749682}
 --- !u!114 &1866094936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3085,8 +3085,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.14378214, z: 0.2}
-  m_Center: {x: 0, y: -0.15583205, z: 0}
+  m_Size: {x: 0.3, y: 0.14378214, z: 0.64253366}
+  m_Center: {x: 0, y: -0.15583205, z: -0.2212668}
 --- !u!114 &1901660841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3191,6 +3191,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2013172002}
   - component: {fileID: 2013172003}
+  - component: {fileID: 2013172005}
+  - component: {fileID: 2013172004}
   m_Layer: 0
   m_Name: Rubik's Cube
   m_TagString: Untagged
@@ -3262,6 +3264,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2013172004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013172001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6507772d32586e442b0df74effffdab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actualGo: {fileID: 2013172001}
+--- !u!65 &2013172005
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013172001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28969473, y: 0.24140936, z: 2.364102}
+  m_Center: {x: 0.014847368, y: 0.0007046759, z: -1.0820506}
 --- !u!1 &2085206780
 GameObject:
   m_ObjectHideFlags: 0
