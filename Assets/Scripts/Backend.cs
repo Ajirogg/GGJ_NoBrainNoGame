@@ -21,6 +21,9 @@ public class Backend : MonoBehaviour
     public GameObject calpinScript03;
     public GameObject calpinScript04;
 
+
+    public GameObject win;
+    public GameObject loose;
     // Start is called before the first frame update
     void Start()
     {
@@ -90,14 +93,18 @@ public class Backend : MonoBehaviour
     {
         Debug.Log("Mauvais = " + patient.ClientMindHealthMin);
         Debug.Log("Bon = " + patient.ClientMindHealthPlus);
-
+        loose.SetActive(false);
+        win.SetActive(false);
         if (patient.ClientMindHealthMin == -100){
-            NewPatient();
+            
             Debug.Log(patient.name + " " + patient.firstname + " " + patient.mentalDisorder.name);
+            loose.SetActive(true);
+
         }
         if (patient.ClientMindHealthPlus == 100){
-            NewPatient();
+            
             Debug.Log(patient.name + " " + patient.firstname + " " + patient.mentalDisorder.name);
+            win.SetActive(true);
         }
 
 
