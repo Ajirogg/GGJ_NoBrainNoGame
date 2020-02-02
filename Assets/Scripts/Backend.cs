@@ -8,6 +8,44 @@ public class Backend : MonoBehaviour
     public Patient patient;
 
 
+
+    public GameObject Window;
+    public GameObject OpenedWindow;
+    public GameObject Radio;
+    public GameObject Carpet;
+    public GameObject CarpetPlate;
+    public GameObject Alcohol;
+    public GameObject Cigarette;
+    public GameObject Incense;
+    public GameObject FamilyPortrait;
+    public GameObject CrossedFamilyPortrait;
+    public GameObject CallingCard;
+    public GameObject WoodToy;
+    public GameObject TableauDroit;
+    public GameObject Picture;
+    public GameObject TerminationLetter;
+    public GameObject BlueMedicine;
+    public GameObject RedMedicine;
+    public GameObject Cookies;
+    public GameObject Cube;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     CalpinScript calpinScript;
 
     public GameObject obj1;
@@ -71,18 +109,20 @@ public class Backend : MonoBehaviour
             objectList[r] = tmp;
         }
 
-     /*     string object01 = objectList[0].usage;
-        string object02 = objectList[1].usage;
-        string object03 = objectList[2].usage;
-        string object04 = objectList[3].usage;
-        string object05 = objectList[4].usage;
-        string objectEmpty = "";
+        /*     string object01 = objectList[0].usage;
+           string object02 = objectList[1].usage;
+           string object03 = objectList[2].usage;
+           string object04 = objectList[3].usage;
+           string object05 = objectList[4].usage;
+           string objectEmpty = "";
 
-      calpinScript01.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object01, object02, object03);
-        calpinScript02.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object04, object05, objectEmpty);
-        calpinScript03.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, objectEmpty, objectEmpty, objectEmpty);
-        calpinScript04.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, objectEmpty, objectEmpty, objectEmpty);
-        */
+         calpinScript01.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object01, object02, object03);
+           calpinScript02.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object04, object05, objectEmpty);
+           calpinScript03.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, objectEmpty, objectEmpty, objectEmpty);
+           calpinScript04.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, objectEmpty, objectEmpty, objectEmpty);
+           */
+
+        SetupScene();
     }
 
     // Update is called once per frame
@@ -139,6 +179,59 @@ public class Backend : MonoBehaviour
             {
                 obj.setEffet(-50);
             }
+        }
+
+        SetupScene();
+    }
+
+    void SetupScene()
+    {
+
+        Window.SetActive(true);
+        OpenedWindow.SetActive(false);
+        Carpet.SetActive(false);
+        CarpetPlate.SetActive(true);
+        Incense.SetActive(false);
+        FamilyPortrait.SetActive(true);
+        CrossedFamilyPortrait.SetActive(false);
+        CallingCard.SetActive(false);
+        TableauDroit.SetActive(true);
+        Picture.SetActive(false);
+        TerminationLetter.SetActive(false);
+        BlueMedicine.SetActive(false);
+        RedMedicine.SetActive(false);
+        Cookies.SetActive(false);
+        Cube.SetActive(false);
+
+        DisplayCorrect();
+    }
+
+    void DisplayCorrect()
+    {
+        switch (patient.mentalDisorder.name)
+        {
+            case "Schizophrenia":
+                CrossedFamilyPortrait.SetActive(true);
+                FamilyPortrait.SetActive(false);
+                BlueMedicine.SetActive(true);
+                RedMedicine.SetActive(true);
+                CallingCard.SetActive(true);
+                break;
+            case "Attention deficit disorder":
+                Cookies.SetActive(true);                 
+                break;
+            case "Drug Addiction":
+                TerminationLetter.SetActive(true);
+                break;
+            case "Maniac":
+                Incense.SetActive(true);
+                Carpet.SetActive(true);
+                CarpetPlate.SetActive(false);
+                Picture.SetActive(true);
+                TableauDroit.SetActive(false);
+                break;
+            case null:
+                break;
         }
     }
 

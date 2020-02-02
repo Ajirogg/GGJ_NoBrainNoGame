@@ -34,7 +34,7 @@ public class MentalDisordersList : MonoBehaviour
         ObjectUsable window = objList.GetObjectUsable(objList.objects, "Window");
         MentalDisorder attentionDeficit = new MentalDisorder("Attention deficit disorder", cookie, radio, toy, window);
         attentionDeficit.neutralObject = objList.GetObjUsableNeutral(objList.neutralADD);
-
+        
 
         ObjectUsable medicine1 = objList.GetObjectUsable(objList.objects, "Blue medicine");
         ObjectUsable medicine2 = objList.GetObjectUsable(objList.objects, "Red medicine");
