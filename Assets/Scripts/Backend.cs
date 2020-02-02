@@ -90,12 +90,13 @@ public class Backend : MonoBehaviour
         if(patient.ClientMindHealthPlus == -100){
             NewPatient();
         }
+        
 
 
     }
 
     void NewPatient(){
-        
+
         patient = new Patient();
 
         MentalDisordersList mentalDisorders = new MentalDisordersList();
