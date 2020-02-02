@@ -99,7 +99,7 @@ public class Backend : MonoBehaviour
                 obj.setEffet(-50);
             }
         }
-        ObjectUsable[] objectList = {patient.mentalDisorder.badObjects[0], patient.mentalDisorder.badObjects[1], patient.mentalDisorder.goodObjects[0], patient.mentalDisorder.goodObjects[1], patient.mentalDisorder.neutralObject};
+        ObjectUsable[] objectList = { patient.mentalDisorder.badObjects[0], patient.mentalDisorder.badObjects[1], patient.mentalDisorder.goodObjects[0], patient.mentalDisorder.goodObjects[1], patient.mentalDisorder.neutralObject };
 
         for (int t = 0; t < objectList.Length; t++)
         {
@@ -109,6 +109,7 @@ public class Backend : MonoBehaviour
             objectList[r] = tmp;
         }
 
+<<<<<<< HEAD
         /*     string object01 = objectList[0].usage;
            string object02 = objectList[1].usage;
            string object03 = objectList[2].usage;
@@ -123,6 +124,19 @@ public class Backend : MonoBehaviour
            */
 
         SetupScene();
+=======
+        string object01 = objectList[0].usage;
+        string object02 = objectList[1].usage;
+        string object03 = objectList[2].usage;
+        string object04 = objectList[3].usage;
+        string object05 = objectList[4].usage;
+        string objectEmpty = "";
+
+        calpinScript01.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object01, object02, object03);
+        calpinScript02.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object04, object05, objectEmpty);
+        calpinScript03.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, objectEmpty, objectEmpty, objectEmpty);
+        calpinScript04.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, objectEmpty, objectEmpty, objectEmpty);
+>>>>>>> ALan
     }
 
     // Update is called once per frame
@@ -133,19 +147,24 @@ public class Backend : MonoBehaviour
         Debug.Log("Min : " + patient.ClientMindHealthMin);
 
 
-        if (patient.ClientMindHealthMin == -100){
+        if (patient.ClientMindHealthMin == -100)
+        {
             NewPatient();
         }
-        if (patient.ClientMindHealthPlus == 100){
+        if (patient.ClientMindHealthPlus == 100)
+        {
             NewPatient();
         }
-
-
-
     }
 
+<<<<<<< HEAD
     void NewPatient(){
         patient = null;
+=======
+    void NewPatient()
+    {
+
+>>>>>>> ALan
         patient = new Patient();
 
         MentalDisordersList mentalDisorders = new MentalDisordersList(objectLister);
@@ -181,6 +200,7 @@ public class Backend : MonoBehaviour
             }
         }
 
+<<<<<<< HEAD
         SetupScene();
     }
 
@@ -234,6 +254,29 @@ public class Backend : MonoBehaviour
             case null:
                 break;
         }
+=======
+        ObjectUsable[] objectList = { patient.mentalDisorder.badObjects[0], patient.mentalDisorder.badObjects[1], patient.mentalDisorder.goodObjects[0], patient.mentalDisorder.goodObjects[1], patient.mentalDisorder.neutralObject };
+
+        for (int t = 0; t < objectList.Length; t++)
+        {
+            ObjectUsable tmp = objectList[t];
+            int r = Random.Range(t, objectList.Length);
+            objectList[t] = objectList[r];
+            objectList[r] = tmp;
+        }
+
+        string object01 = objectList[0].usage;
+        string object02 = objectList[1].usage;
+        string object03 = objectList[2].usage;
+        string object04 = objectList[3].usage;
+        string object05 = objectList[4].usage;
+        string objectEmpty = "";
+
+        calpinScript01.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object01, object02, object03);
+        calpinScript02.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object04, object05, objectEmpty);
+        calpinScript03.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, objectEmpty, objectEmpty, objectEmpty);
+        calpinScript04.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, objectEmpty, objectEmpty, objectEmpty);
+>>>>>>> ALan
     }
 
     public void changeState(string name)

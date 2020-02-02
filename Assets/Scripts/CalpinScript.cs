@@ -2,27 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class CalpinScript : MonoBehaviour
 {
+    [SerializeField] private Text prenomNomText = null;
+    [SerializeField] private Text line01 = null;
+    [SerializeField] private Text line02 = null;
+    [SerializeField] private Text line03 = null;
+    [SerializeField] private GameObject Page01 = null;
+    [SerializeField] private GameObject Page02 = null;
+    [SerializeField] private GameObject Page03 = null;
+    [SerializeField] private GameObject Page04 = null;
 
-    [SerializeField]
-    public Text prenomNomText;
-    public Text line01;
-    public Text line02;
-    public Text line03;
-    public GameObject Page01;
-    public GameObject Page02;
-    public GameObject Page03;
-    public GameObject Page04;
-    public bool isCalpinActive = false;
-
-
-    void Start()
-    {
-
-    }
 
     public void SetCalpin(string actualname, string actualFirstname, string actualLine01, string actualLine02, string actualLine03)
     {
@@ -109,21 +100,27 @@ public class CalpinScript : MonoBehaviour
         }
     }
 
-    public void ShowHideCalpin()
+    public void EventCalpin(string eventToAdd)
     {
-        isCalpinActive = !isCalpinActive;
-
-        if (isCalpinActive)
+        if (this.name == "CanvasCalpin03" && line01.text == "")
         {
-            // Do transfome here
+            line01.text = "• " + eventToAdd;
         }
-        else if (!isCalpinActive)
+        else if (this.name == "CanvasCalpin03" && line02.text == "")
         {
-            // Do transfome here
-            Page01.SetActive(true);
-            Page02.SetActive(false);
-            Page03.SetActive(false);
-            Page04.SetActive(false);
+            line02.text = "• " + eventToAdd;
+        }
+        else if (this.name == "CanvasCalpin03" && line03.text == "")
+        {
+            line03.text = "• " + eventToAdd;
+        }
+        else if (this.name == "CanvasCalpin04" && line01.text == "")
+        {
+            line01.text = "• " + eventToAdd;
+        }
+        else if (this.name == "CanvasCalpin04" && line02.text == "")
+        {
+            line02.text = "• " + eventToAdd;
         }
     }
 }

@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Cursor : MonoBehaviour
 {
-    private float clickCooldown = 0.5f;
-    private float clickNext = 0.5f;
+    [SerializeField] GameObject calpinMove = null;
+    [SerializeField] GameObject calpin03 = null;
+    [SerializeField] GameObject calpin04 = null;
 
     private Ray ray;
     private RaycastHit hitInfo;
-    
-    private Vector2 mousePosition2D;
 
     public Backend back;
 
@@ -19,14 +18,18 @@ public class Cursor : MonoBehaviour
     {
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hitInfo))
+        if (Physics.Raycast(ray, out hitInfo))
+        {
+            if (Input.GetMouseButton(0))
             {
-                if(Input.GetMouseButton(0)){
-                    SetSateTrue(hitInfo.transform.tag);
-                    
+                SetSateTrue(hitInfo.transform.tag);
+                if (hitInfo.transform.tag == "Psychologist")
+                {
+                    calpinMove.GetComponent<MoveCalpin>().ShowHideCalpin();
                 }
-
             }
+
+        }
     }
     public void SetSateTrue(string tag)
     {
@@ -38,8 +41,13 @@ public class Cursor : MonoBehaviour
                 if (obj.state == false)
                 {
                     obj.state = true;
+<<<<<<< HEAD
                     ApplyObjEffect(obj.name, objs);
                     back.changeState(obj.name);
+=======
+                    ApplyObjEffect(obj.name);
+                    //Debug.Log(obj.state);
+>>>>>>> ALan
                 }
                 else
                 {
@@ -54,6 +62,7 @@ public class Cursor : MonoBehaviour
     {
         Patient actualPatient = back.patient;
 
+<<<<<<< HEAD
         if(back.patient.mentalDisorder.name == "Schizophrenia")
         {
             foreach (ObjectUsable obj in back.patient.mentalDisorder.badObjects)
@@ -125,8 +134,30 @@ public class Cursor : MonoBehaviour
                 if(mObj.name == tag){
                     actualPatient.ClientMindHealthPlus += mObj.effect;
                 }
+=======
+        foreach (ObjectUsable obj in badobjs)
+        {
+            if (obj.name == tag)
+            {
+                actualPatient.ClientMindHealthMin += obj.effect;
+                calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
+                calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
             }
+        }
+        foreach (ObjectUsable mObj in goodobjs)
+        {
+            if (mObj.name == tag)
+            {
+                actualPatient.ClientMindHealthPlus += mObj.effect;
+                calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+                calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+>>>>>>> ALan
+            }
+        }
+        if (back.patient.mentalDisorder.neutralObject.name == tag)
+        {
+            calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is neutral");
+            calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is neutral");
         }
     }
 }
-
