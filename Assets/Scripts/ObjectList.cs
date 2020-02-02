@@ -12,13 +12,17 @@ public class ObjectList : MonoBehaviour
     public ObjectUsable[] neutralADD;
 
     public ObjectList() {
+        CreateObjectList();
+    }
 
+   public ObjectUsable[] CreateObjectList()
+    {
         ObjectUsable incense = new ObjectUsable("Incense", 0, "Light incense");
         ObjectUsable rubiksCube = new ObjectUsable("Rubik's Cube", 0, "Propose a distraction");
         ObjectUsable picture = new ObjectUsable("Picture", 0, "Straighten the picture");
         ObjectUsable carpet = new ObjectUsable("Carpet", 0, "Lay down the mat");
         ObjectUsable familyPortrait = new ObjectUsable("Family Portrait", 0, "Show family portrait");
-        ObjectUsable terminationLetter = new ObjectUsable("Termination Letter", 0, "Recall the termination");
+        ObjectUsable terminationLetter = new ObjectUsable("c", 0, "Recall the termination");
         ObjectUsable alcohol = new ObjectUsable("Alcohol", 0, "Offer a glass");
         ObjectUsable cigarette = new ObjectUsable("Cigarette", 0, "Offer a cigarette");
         ObjectUsable cookie = new ObjectUsable("Cookies", 0, "Offer to eat");
@@ -29,7 +33,6 @@ public class ObjectList : MonoBehaviour
         ObjectUsable medicine2 = new ObjectUsable("Red medicine", 0, "Prescribing neuroleptics");
         ObjectUsable familyPortraitCrossed = new ObjectUsable("Crossed family portrait", 0, "Advise to take time alonet");
         ObjectUsable callingCard = new ObjectUsable("Calling card", 0, "Give calling card");
-
 
         objects = new ObjectUsable[] {
             incense,
@@ -108,8 +111,9 @@ public class ObjectList : MonoBehaviour
             familyPortraitCrossed,
             callingCard
         };
+        return objects;
     }
-    
+
     public ObjectUsable GetObjectUsable(ObjectUsable[] objs, string name)
     {
         for(int index = 0; index < objs.Length; index++)

@@ -30,6 +30,9 @@ public class Patient : MonoBehaviour
         ClientMindHealthMin =  0;
         ClientMindHealthPlus = 0;
 
+
+
+        
     }
 
     // Update is called once per frame

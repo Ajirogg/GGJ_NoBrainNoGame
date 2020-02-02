@@ -5,9 +5,9 @@ using UnityEngine;
 public class MentalDisordersList : MonoBehaviour
 {
     public MentalDisorder[] mentalDisroders;
-  //  public ObjectList objList = new ObjectList();
+    public ObjectList objList = new ObjectList();
 
-    public MentalDisordersList(ObjectList objList)
+    public MentalDisordersList()
     {
         ObjectUsable incense = objList.GetObjectUsable(objList.objects, "Incense");
         ObjectUsable rubiksCube = objList.GetObjectUsable(objList.objects, "Rubik's Cube");
@@ -41,9 +41,9 @@ public class MentalDisordersList : MonoBehaviour
         ObjectUsable familyPortraitCrossed = objList.GetObjectUsable(objList.objects, "Crossed family portrait");
         ObjectUsable callingCard = objList.GetObjectUsable(objList.objects, "Calling card");
         MentalDisorder schizophrenia = new MentalDisorder("Schizophrenia", medicine1, callingCard, familyPortraitCrossed, medicine2);
-        schizophrenia.neutralObject = objList.GetObjUsableNeutral(objList.neutralSchizo);
+        drugAddiction.neutralObject = objList.GetObjUsableNeutral(objList.neutralSchizo);
 
-        mentalDisroders = new MentalDisorder[] { maniac, drugAddiction, attentionDeficit, schizophrenia };
+        mentalDisroders = new MentalDisorder[] { maniac, drugAddiction, attentionDeficit/*, schizophrenia */};
     }
 
     public MentalDisorder GetMentalDisorder()

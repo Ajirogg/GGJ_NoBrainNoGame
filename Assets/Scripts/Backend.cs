@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class Backend : MonoBehaviour
 {
-    public ObjectList objectLister;
     public Patient patient;
-
-
     CalpinScript calpinScript;
 
     ObjectList objList = new ObjectList();
@@ -29,9 +26,8 @@ public class Backend : MonoBehaviour
     void Start()
     {
         patient = new Patient();
-        objectLister = new ObjectList();
-     
-        MentalDisordersList mentalDisorders = new MentalDisordersList(objectLister);
+
+        MentalDisordersList mentalDisorders = new MentalDisordersList();
         patient.mentalDisorder = mentalDisorders.GetMentalDisorder();
         Debug.Log(patient.mentalDisorder.name);
 
@@ -47,7 +43,7 @@ public class Backend : MonoBehaviour
             objectList[r] = tmp;
         }
 
-     /*     string object01 = objectList[0].usage;
+        string object01 = objectList[0].usage;
         string object02 = objectList[1].usage;
         string object03 = objectList[2].usage;
         string object04 = objectList[3].usage;
@@ -85,8 +81,8 @@ public class Backend : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Mauvais = " + patient.ClientMindHealthMin);
-        Debug.Log("Bon = " + patient.ClientMindHealthPlus);
+        Debug.Log(patient.ClientMindHealthMin);
+        Debug.Log(patient.ClientMindHealthPlus);
 
         
 
@@ -103,11 +99,11 @@ public class Backend : MonoBehaviour
     }
 
     void NewPatient(){
-        patient = null;
+
         patient = new Patient();
         
 
-        MentalDisordersList mentalDisorders = new MentalDisordersList(objectLister);
+        MentalDisordersList mentalDisorders = new MentalDisordersList();
         patient.mentalDisorder = mentalDisorders.GetMentalDisorder();
 
         
