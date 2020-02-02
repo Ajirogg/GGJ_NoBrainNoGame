@@ -19,6 +19,7 @@ public class Cursor : MonoBehaviour
             if (Physics.Raycast(ray, out hitInfo))
             {
                 Debug.Log(hitInfo.transform.tag);
+                if(hitInfo.)
                 if(Input.GetMouseButton(0)){
                     SetSateTrue(hitInfo.transform.tag);
                 }
@@ -36,6 +37,27 @@ public class Cursor : MonoBehaviour
                 obj.state = true;
                 }else{
 
+                }
+            }
+        } 
+    }
+
+    public void ApplyObjEffect(string tag)
+    {
+        ObjectList objs = GetComponent<ObjectList>() ;
+        Patient actualPatient = GetComponent<Patient>();
+        foreach(ObjectUsable obj in objs.objects)
+        {
+            if(obj.name == tag){
+                foreach(ObjectUsable pObj in actualPatient.UsableObjGood){
+                    if(pObj.name == tag){
+                        actualPatient.ClientMindHealth += pObj.effect;
+                    }
+                }
+                foreach(ObjectUsable mObj in actualPatient.UsableObjBad){
+                    if(mObj.name == tag){
+                        actualPatient.ClientMindHealth += mObj.effect;
+                    }
                 }
             }
         } 
