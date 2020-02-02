@@ -9,6 +9,7 @@ public class Cursor : MonoBehaviour
 
     private Ray ray;
     private RaycastHit hitInfo;
+    
     private Vector2 mousePosition2D;
 
 
