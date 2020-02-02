@@ -23,7 +23,6 @@ public class Cursor : MonoBehaviour
             {
                 if(Input.GetMouseButton(0)){
                     SetSateTrue(hitInfo.transform.tag);
-                    
                 }
 
             }
