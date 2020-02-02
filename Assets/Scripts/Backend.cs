@@ -43,7 +43,10 @@ public class Backend : MonoBehaviour
 
     public Animator patientAnimator;
 
-
+    public GameObject loose;
+    public GameObject win;
+    public GameObject calpin;
+    public GameObject gamebutton;
 
 
 
@@ -69,7 +72,7 @@ public class Backend : MonoBehaviour
     {
         patient = new Patient();
         objectLister = new ObjectList();
-     
+
         MentalDisordersList mentalDisorders = new MentalDisordersList(objectLister);
         patient.mentalDisorder = mentalDisorders.GetMentalDisorder();
         Debug.Log(patient.mentalDisorder.name);
@@ -139,15 +142,22 @@ public class Backend : MonoBehaviour
 
         if (patient.ClientMindHealthMin == -100)
         {
-            NewPatient();
+            win.SetActive(false);
+            loose.SetActive(true);
+            calpin.SetActive(false);
+            gamebutton.SetActive(false);
         }
         if (patient.ClientMindHealthPlus == 100)
         {
-            NewPatient();
+            win.SetActive(true);
+            loose.SetActive(false);
+            calpin.SetActive(false);
+            gamebutton.SetActive(false);
         }
     }
 
-    void NewPatient(){
+    public void NewPatient()
+    {
         patient = null;
         patient = new Patient();
 
@@ -246,7 +256,7 @@ public class Backend : MonoBehaviour
                 CallingCard.SetActive(true);
                 break;
             case "Attention deficit disorder":
-                Cookies.SetActive(true);                 
+                Cookies.SetActive(true);
                 break;
             case "Drug Addiction":
                 TerminationLetter.SetActive(true);
