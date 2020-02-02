@@ -76,6 +76,9 @@ public class Cursor : MonoBehaviour
                                 actualPatient.ClientMindHealthMin -= obj.effect;
                                 calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
                                 calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
+                                back.patientAnimator.SetBool("BadItemTaken", true);
+                                back.patientAnimator.SetBool("GoodItemTaken", false);
+                                back.patientAnimator.SetInteger("BadItems", back.patientAnimator.GetInteger("BadItems") + 1);
 
                             }
                             else
@@ -83,6 +86,10 @@ public class Cursor : MonoBehaviour
                                 actualPatient.ClientMindHealthPlus += obj.effect;
                                 calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
                                 calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+
+                                back.patientAnimator.SetBool("GoodItemTaken", true);
+                                back.patientAnimator.SetBool("BadItemTaken", false);
+                                back.patientAnimator.SetInteger("GoodItems", back.patientAnimator.GetInteger("GoodItems") + 1);
                             }
                         }
                         else
@@ -90,6 +97,10 @@ public class Cursor : MonoBehaviour
                             actualPatient.ClientMindHealthPlus += obj.effect;
                             calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
                             calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+
+                            back.patientAnimator.SetBool("GoodItemTaken", true);
+                            back.patientAnimator.SetBool("BadItemTaken", false);
+                            back.patientAnimator.SetInteger("GoodItems", back.patientAnimator.GetInteger("GoodItems") + 1);
                         }
                     }
                     else
@@ -97,6 +108,10 @@ public class Cursor : MonoBehaviour
                         actualPatient.ClientMindHealthMin += obj.effect;
                         calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
                         calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
+                        back.patientAnimator.SetBool("BadItemTaken", true);
+                                back.patientAnimator.SetBool("GoodItemTaken", false);
+                        back.patientAnimator.SetInteger("BadItems", back.patientAnimator.GetInteger("BadItems") + 1);
+
                     }
                 }
             }
@@ -116,12 +131,20 @@ public class Cursor : MonoBehaviour
                                 actualPatient.ClientMindHealthMin -= mObj.effect;
                                 calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
                                 calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
+                                back.patientAnimator.SetBool("BadItemTaken", true);
+                                back.patientAnimator.SetBool("GoodItemTaken", false);
+                                back.patientAnimator.SetInteger("BadItems", back.patientAnimator.GetInteger("BadItems") + 1);
+
                             }
                             else
                             {
                                 actualPatient.ClientMindHealthPlus += mObj.effect;
                                 calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
                                 calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+
+                                back.patientAnimator.SetBool("GoodItemTaken", true);
+                                back.patientAnimator.SetBool("BadItemTaken", false);
+                                back.patientAnimator.SetInteger("GoodItems", back.patientAnimator.GetInteger("GoodItems") + 1);
                             }
                         }
                         else
@@ -129,6 +152,10 @@ public class Cursor : MonoBehaviour
                             actualPatient.ClientMindHealthPlus += mObj.effect;
                             calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
                             calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+
+                            back.patientAnimator.SetBool("GoodItemTaken", true);
+                            back.patientAnimator.SetBool("BadItemTaken", false);
+                            back.patientAnimator.SetInteger("GoodItems", back.patientAnimator.GetInteger("GoodItems") + 1);
                         }
                     }
                     else
@@ -136,6 +163,10 @@ public class Cursor : MonoBehaviour
                         actualPatient.ClientMindHealthPlus += mObj.effect;
                         calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
                         calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+
+                        back.patientAnimator.SetBool("GoodItemTaken", true);
+                        back.patientAnimator.SetBool("BadItemTaken", false);
+                        back.patientAnimator.SetInteger("GoodItems", back.patientAnimator.GetInteger("GoodItems") + 1);
                     }
                 }
             }
@@ -149,6 +180,10 @@ public class Cursor : MonoBehaviour
                     actualPatient.ClientMindHealthMin += obj.effect;
                     calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
                     calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is bad");
+                    back.patientAnimator.SetBool("BadItemTaken", true);
+                                back.patientAnimator.SetBool("GoodItemTaken", false);
+                    back.patientAnimator.SetInteger("BadItems", back.patientAnimator.GetInteger("BadItems") + 1);
+
                 }
             }
             foreach (ObjectUsable mObj in back.patient.mentalDisorder.goodObjects)
@@ -158,6 +193,10 @@ public class Cursor : MonoBehaviour
                     actualPatient.ClientMindHealthPlus += mObj.effect;
                     calpin03.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
                     calpin04.GetComponent<CalpinScript>().EventCalpin(tag + " is good");
+
+                    back.patientAnimator.SetBool("GoodItemTaken", true);
+                    back.patientAnimator.SetBool("BadItemTaken", false);
+                    back.patientAnimator.SetInteger("GoodItems", back.patientAnimator.GetInteger("GoodItems") + 1);
                 }
             }
         }

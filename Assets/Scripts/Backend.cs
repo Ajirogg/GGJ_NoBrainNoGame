@@ -34,9 +34,14 @@ public class Backend : MonoBehaviour
 
 
 
+    public GameObject PatientSchizo;
+    public GameObject PatientADD;
+    public GameObject PatientManiac;
+    public GameObject PatientToxico;
 
 
 
+    public Animator patientAnimator;
 
 
 
@@ -226,6 +231,7 @@ public class Backend : MonoBehaviour
         Cube.SetActive(false);
 
         DisplayCorrect();
+        DisplayPatient(patient.mentalDisorder.name);
     }
 
     void DisplayCorrect()
@@ -307,6 +313,46 @@ public class Backend : MonoBehaviour
                 break;
             case "Calling card":
                 CallingCard.SetActive(false);
+                break;
+            case null:
+                break;
+        }
+    }
+
+    public void DisplayPatient(string mDisorder)
+    {
+        switch (mDisorder)
+        {
+            case "Schizophrenia":
+                PatientSchizo.SetActive(true);
+                PatientADD.SetActive(false);
+                PatientToxico.SetActive(false);
+                PatientManiac.SetActive(false);
+
+
+                patientAnimator = PatientSchizo.GetComponent<Animator>();
+                break;
+            case "Attention deficit disorder":
+                PatientSchizo.SetActive(false);
+                PatientADD.SetActive(true);
+                PatientToxico.SetActive(false);
+                PatientManiac.SetActive(false);
+                patientAnimator = PatientADD.GetComponent<Animator>();
+                break;
+            case "Drug Addiction":
+                PatientSchizo.SetActive(false);
+                PatientADD.SetActive(false);
+                PatientToxico.SetActive(true);
+                PatientManiac.SetActive(false);
+                patientAnimator = PatientToxico.GetComponent<Animator>();
+                break;
+            case "Maniac":
+                PatientSchizo.SetActive(false);
+                PatientADD.SetActive(false);
+                PatientToxico.SetActive(false);
+                PatientManiac.SetActive(true);
+                patientAnimator = PatientManiac.GetComponent<Animator>();
+
                 break;
             case null:
                 break;
