@@ -24,8 +24,6 @@ public class Patient : MonoBehaviour
         name = pInfo.getRandomName();
         firstname = pInfo.getRandomFirstname();
 
-        UsableObjGood = ClientDisorder.goodObjects;
-        UsableObjBad = ClientDisorder.badObjects;
         ClientMindHealthMin =  0;
         ClientMindHealthPlus = 0;
 

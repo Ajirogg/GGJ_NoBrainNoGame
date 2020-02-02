@@ -131,7 +131,6 @@ GameObject:
   m_Component:
   - component: {fileID: 95792454}
   - component: {fileID: 95792455}
-  - component: {fileID: 95792456}
   m_Layer: 0
   m_Name: double_table
   m_TagString: Untagged
@@ -203,19 +202,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &95792456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 95792453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6507772d32586e442b0df74effffdab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualGo: {fileID: 0}
 --- !u!1 &154675993
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,7 +430,6 @@ GameObject:
   m_Component:
   - component: {fileID: 215951131}
   - component: {fileID: 215951132}
-  - component: {fileID: 215951133}
   m_Layer: 0
   m_Name: background2
   m_TagString: Untagged
@@ -516,19 +501,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &215951133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215951130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6507772d32586e442b0df74effffdab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualGo: {fileID: 0}
 --- !u!1 &242868599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,7 +1418,6 @@ GameObject:
   m_Component:
   - component: {fileID: 962379391}
   - component: {fileID: 962379392}
-  - component: {fileID: 962379393}
   m_Layer: 0
   m_Name: ombres
   m_TagString: Untagged
@@ -1518,19 +1489,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &962379393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962379390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6507772d32586e442b0df74effffdab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualGo: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,6 +2083,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1378921536}
   - component: {fileID: 1378921535}
+  - component: {fileID: 1378921537}
   m_Layer: 0
   m_Name: testBackend
   m_TagString: Untagged
@@ -2167,6 +2126,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1378921537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378921534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24333e391becdaf48bdcadbf0e0fbca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  neutralSchizo:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  neutralManiac:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  neutralAddict:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  neutralADD:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1450036566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,7 +2325,6 @@ GameObject:
   - component: {fileID: 1504395555}
   - component: {fileID: 1504395556}
   - component: {fileID: 1504395557}
-  - component: {fileID: 1504395558}
   m_Layer: 0
   m_Name: psy
   m_TagString: Psychologist
@@ -2372,19 +2409,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7363623, y: 1.8393009, z: 0.2}
   m_Center: {x: -0.1000641, y: -0.09534955, z: 0}
---- !u!114 &1504395558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504395554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6507772d32586e442b0df74effffdab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualGo: {fileID: 0}
 --- !u!1 &1778415152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2870,7 +2894,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2085206781}
   - component: {fileID: 2085206782}
-  - component: {fileID: 2085206783}
   m_Layer: 0
   m_Name: lumieres
   m_TagString: Untagged
@@ -2942,16 +2965,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2085206783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085206780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6507772d32586e442b0df74effffdab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualGo: {fileID: 0}

@@ -30,6 +30,7 @@ public class Cursor : MonoBehaviour
     public void SetSateTrue(string tag)
     {
         ObjectList objs = GetComponent<ObjectList>() ;
+
         foreach(ObjectUsable obj in objs.objects)
         {
             if(obj.name == tag){

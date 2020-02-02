@@ -22,6 +22,7 @@ public class Backend : MonoBehaviour
     void Start()
     {
         patient = new Patient();
+        Debug.Log("SAINTE MERE TA PUTE ENCULE DE TES MORTS");
         Debug.Log(patient.name + " " + patient.firstname);
 
         MentalDisordersList mentalDisorders = new MentalDisordersList();
@@ -73,21 +74,20 @@ public class Backend : MonoBehaviour
         string object05 = objectList[4].usage;
         string objectEmpty = "";
 
-        calpinScript01.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object01, object02, object03);
+     /*   calpinScript01.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object01, object02, object03);
         calpinScript02.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, object04, object05, objectEmpty);
         calpinScript03.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, objectEmpty, objectEmpty, objectEmpty);
         calpinScript04.GetComponent<CalpinScript>().SetCalpin(patient.name, patient.firstname, objectEmpty, objectEmpty, objectEmpty);
-
-        SetupGame();
+        */
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(patient.ClientMindHealthMin == -100){
+        if (patient.ClientMindHealthMin == -100){
             NewPatient();
         }
-        if(patient.ClientMindHealthPlus == -100){
+        if(patient.ClientMindHealthPlus == 100){
             NewPatient();
         }
         
@@ -133,8 +133,4 @@ public class Backend : MonoBehaviour
         }
     }
 
-    void SetupGame()
-    {
-
-    }
 }
