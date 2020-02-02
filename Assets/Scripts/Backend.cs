@@ -84,7 +84,52 @@ public class Backend : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(patient.ClientMindHealthMin == -100){
+            NewPatient();
+        }
+        if(patient.ClientMindHealthPlus == -100){
+            NewPatient();
+        }
 
+
+    }
+
+    void NewPatient(){
+        
+        patient = new Patient();
+
+        MentalDisordersList mentalDisorders = new MentalDisordersList();
+        patient.mentalDisorder = mentalDisorders.GetMentalDisorder();
+
+        if (patient.mentalDisorder.name == "Schizophrenia")
+        {
+            foreach (ObjectUsable obj in patient.mentalDisorder.goodObjects)
+            {
+                obj.setEffet(50);
+            }
+            foreach (ObjectUsable obj in patient.mentalDisorder.badObjects)
+            {
+                if (obj.name == "Red medicine")
+                {
+                    obj.setEffet(50);
+                }
+                else
+                {
+                    obj.setEffet(-50);
+                }
+            }
+        }
+        else
+        {
+            foreach (ObjectUsable obj in patient.mentalDisorder.goodObjects)
+            {
+                obj.setEffet(50);
+            }
+            foreach (ObjectUsable obj in patient.mentalDisorder.badObjects)
+            {
+                obj.setEffet(-50);
+            }
+        }
     }
 
     void SetupGame()
