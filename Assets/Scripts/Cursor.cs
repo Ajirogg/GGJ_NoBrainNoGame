@@ -28,44 +28,102 @@ public class Cursor : MonoBehaviour
 
             }
     }
-
     public void SetSateTrue(string tag)
     {
         ObjectUsable[] objs = back.patient.ObjectLister.objects;
-        foreach(ObjectUsable obj in objs)
+        foreach (ObjectUsable obj in objs)
         {
-            if(obj.name == tag){
-                if(obj.state == false){
-                obj.state = true;
-                ApplyObjEffect(obj.name);
-                //Debug.Log(obj.state);
-                }else{
+            if (obj.name == tag)
+            {
+                if (obj.state == false)
+                {
+                    obj.state = true;
+                    ApplyObjEffect(obj.name, objs);
+                }
+                else
+                {
 
                 }
             }
-        } 
+        }
     }
 
-    public void ApplyObjEffect(string tag)
+
+    public void ApplyObjEffect(string tag, ObjectUsable[] objs)
     {
         Patient actualPatient = back.patient;
-        ObjectUsable[] badobjs = back.patient.mentalDisorder.badObjects;
-        ObjectUsable[] goodobjs = back.patient.mentalDisorder.goodObjects;
 
-        foreach(ObjectUsable obj in badobjs)
+        if(back.patient.mentalDisorder.name == "Schizophrenia")
         {
-            if(obj.name == tag){
+            foreach (ObjectUsable obj in back.patient.mentalDisorder.badObjects)
+            {
+                if (obj.name == tag)
+                { 
+                    if(obj.name == "Red medicine")
+                    {
+                        if (actualPatient.ClientMindHealthPlus == 50)
+                        {
+                            if (back.objectLister.GetObjectUsable(objs, "Blue medicine").state == true)
+                            {
+                                actualPatient.ClientMindHealthMin -= obj.effect;
+                            } else
+                            {
+                                actualPatient.ClientMindHealthPlus += obj.effect;
+                            }
+                        } else
+                        {
+                            actualPatient.ClientMindHealthPlus += obj.effect;
+                        }
+                    } else
+                    {
                         actualPatient.ClientMindHealthMin += obj.effect;
-                    
+                    }
                 }
-        }
-        foreach(ObjectUsable mObj in goodobjs){
-            if(mObj.name == tag){
-                actualPatient.ClientMindHealthPlus += mObj.effect;
+            }
+
+            foreach (ObjectUsable mObj in back.patient.mentalDisorder.goodObjects)
+            {
+                if (mObj.name == tag)
+                {
+                    if (mObj.name == "Blue medicine")
+                    {
+                        if (actualPatient.ClientMindHealthPlus == 50)
+                        {
+                            if (back.objectLister.GetObjectUsable(objs, "Red medicine").state == true)
+                            {
+                                actualPatient.ClientMindHealthMin -= mObj.effect;
+                            }
+                            else
+                            {
+                                actualPatient.ClientMindHealthPlus += mObj.effect;
+                            }
+                        }
+                        else
+                        {
+                            actualPatient.ClientMindHealthPlus += mObj.effect;
+                        }
+                    }
+                    else
+                    {
+                        actualPatient.ClientMindHealthPlus += mObj.effect;
+                    }
+                }
+            }
+        } else
+        {
+            foreach(ObjectUsable obj in back.patient.mentalDisorder.badObjects)
+            {
+                if(obj.name == tag){
+                    actualPatient.ClientMindHealthMin += obj.effect;
+                }
+            }
+            foreach(ObjectUsable mObj in back.patient.mentalDisorder.goodObjects)
+            {
+                if(mObj.name == tag){
+                    actualPatient.ClientMindHealthPlus += mObj.effect;
+                }
             }
         }
     }
-        
-    
 }
 

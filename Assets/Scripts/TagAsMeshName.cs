@@ -12,9 +12,6 @@ public class TagAsMeshName : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-//        actualGo = this.GetComponent<GameObject>();
-  //      Debug.Log(actualGo.name);
-
         Actual = actualGo.GetComponent<SpriteRenderer>();
         foreach(ObjectUsable obj in objList.objects){
             if(Actual.sprite.name == obj.name){
