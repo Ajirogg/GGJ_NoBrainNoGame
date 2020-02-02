@@ -60,7 +60,7 @@ public class ObjectList : MonoBehaviour
             picture,
             carpet,
             familyPortrait,
-            terminationLetter,
+            //terminationLetter,
             alcohol,
             cigarette,
             cookie,
@@ -74,10 +74,10 @@ public class ObjectList : MonoBehaviour
             picture,
             carpet,
             familyPortrait,
-            terminationLetter,
+            //terminationLetter,
             alcohol,
             cigarette,
-            medicine1,
+            //medicine1,
             medicine2,
             familyPortraitCrossed,
             callingCard
@@ -85,12 +85,12 @@ public class ObjectList : MonoBehaviour
 
         neutralAddict = new ObjectUsable[] {
             incense,
-            rubiksCube,
+            //rubiksCube,
             picture,
             carpet,
             cookie,
             radio,
-            toy,
+            //toy,
             window,
             medicine1,
             medicine2,
@@ -106,8 +106,8 @@ public class ObjectList : MonoBehaviour
             cookie,
             radio,
             window,
-            medicine1,
-            medicine2,
+            //medicine1,
+            //medicine2,
             familyPortraitCrossed,
             callingCard
         };
