@@ -26,7 +26,7 @@ public class Patient : MonoBehaviour
 
         UsableObjGood = ClientDisorder.goodObjects;
         UsableObjBad = ClientDisorder.badObjects;
-        ClientMindHealthMin = 0;
+        ClientMindHealthMin =  0;
         ClientMindHealthPlus = 0;
 
         
