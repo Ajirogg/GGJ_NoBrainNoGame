@@ -22,7 +22,7 @@ public class ObjectList : MonoBehaviour
         ObjectUsable picture = new ObjectUsable("Picture", 0, "Straighten the picture");
         ObjectUsable carpet = new ObjectUsable("Carpet", 0, "Lay down the mat");
         ObjectUsable familyPortrait = new ObjectUsable("Family Portrait", 0, "Show family portrait");
-        ObjectUsable terminationLetter = new ObjectUsable("Termination Letter", 0, "Recall the termination");
+        ObjectUsable terminationLetter = new ObjectUsable("c", 0, "Recall the termination");
         ObjectUsable alcohol = new ObjectUsable("Alcohol", 0, "Offer a glass");
         ObjectUsable cigarette = new ObjectUsable("Cigarette", 0, "Offer a cigarette");
         ObjectUsable cookie = new ObjectUsable("Cookies", 0, "Offer to eat");
